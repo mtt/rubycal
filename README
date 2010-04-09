@@ -1,0 +1,11 @@
+= RubyCal - Create a Calendar
+
+
+Calendar.new(:month => @month,:year => @year) do |c|
+  #Calendar::Event Objects
+  c.add_events @events
+	c.html_for_event do |event|
+	  #Using some rails methods
+	  link_to(h(event.title),event_path(event))
+	end
+end
